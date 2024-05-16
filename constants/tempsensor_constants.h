@@ -1,5 +1,6 @@
 #ifndef TEMPSENSOR_CONSTANTS_H
 #define TEMPSENSOR_CONSTANTS_H
+
 #include "hardware/i2c.h"
 
 #define SENSOR_SDA_PIN 4

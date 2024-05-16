@@ -1,5 +1,6 @@
 #ifndef LCD_CONSTANTS_H
 #define LCD_CONSTANTS_H
+
 #include "hardware/i2c.h"
 
 // Commands
