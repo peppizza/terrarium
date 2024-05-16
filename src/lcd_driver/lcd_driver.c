@@ -1,4 +1,4 @@
-#include "include/lcd_driver.h"
+#include "lcd_driver.h"
 
 void i2c_write_byte(uint8_t val)
 {

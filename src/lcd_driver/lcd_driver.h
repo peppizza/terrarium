@@ -1,7 +1,7 @@
 #ifndef LCD_DRIVER_H
 #define LCD_DRIVER_H
 
-#include "constants/lcd_constants.h"
+#include "lcd_constants.h"
 #include "hardware/i2c.h"
 
 #define LCD_CHARACTER 1
