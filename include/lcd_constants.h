@@ -1,5 +1,6 @@
 #ifndef LCD_CONSTANTS_H
 #define LCD_CONSTANTS_H
+#include "hardware/i2c.h"
 
 // Commands
 #define LCD_CLEARDISPLAY 0x01
@@ -46,8 +47,8 @@
 
 #define LCD_ADDR 0x27
 
-#define LCD_SDA_PIN PICO_DEFAULT_I2C_SDA_PIN
-#define LCD_SCL_PIN PICO_DEFAULT_I2C_SCL_PIN
-#define LCD_INSTANCE PICO_DEFAULT_I2C_INSTANCE
+#define LCD_SDA_PIN 6
+#define LCD_SCL_PIN 7
+#define LCD_INSTANCE i2c0_inst
 
 #endif
