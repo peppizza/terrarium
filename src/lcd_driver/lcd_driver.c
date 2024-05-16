@@ -2,7 +2,7 @@
 
 void i2c_write_byte(uint8_t val)
 {
-    i2c_write_blocking(&LCD_INSTANCE, LCD_ADDR, &val, 1, false);
+    i2c_write_blocking(LCD_INSTANCE, LCD_ADDR, &val, 1, false);
 }
 
 void lcd_toggle_enable(uint8_t val)

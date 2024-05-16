@@ -48,8 +48,8 @@
 
 #define LCD_ADDR 0x27
 
-#define LCD_SDA_PIN 6
-#define LCD_SCL_PIN 7
-#define LCD_INSTANCE i2c0_inst
+#define LCD_SDA_PIN 4
+#define LCD_SCL_PIN 5
+#define LCD_INSTANCE i2c0
 
 #endif
