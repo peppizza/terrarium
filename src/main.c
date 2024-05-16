@@ -30,10 +30,11 @@ int main()
 
     lcd_init();
 
-    lcd_set_cursor(0, 0);
-    lcd_string("WAOW");
-    lcd_set_cursor(1, 5);
-    lcd_string("AWESOME");
+    while (1)
+    {
+        printf("TODO");
+        sleep_ms(500);
+    }
 
     return 0;
 }
