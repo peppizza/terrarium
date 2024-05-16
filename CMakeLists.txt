@@ -1,6 +1,7 @@
 # Generated Cmake Pico project file
 
 cmake_minimum_required(VERSION 3.13)
+include(pico_sdk_import.cmake)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
@@ -25,6 +26,8 @@ endif()
 # ====================================================================================
 set(PICO_BOARD pico_w CACHE STRING "Board type")
 
-project(terrarium C CXX ASM)
+pico_sdk_init()
+
+project(terrarium_project C CXX ASM)
 
 add_subdirectory(src)

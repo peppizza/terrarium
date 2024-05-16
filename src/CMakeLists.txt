@@ -1,14 +1,10 @@
-include(${CMAKE_CURRENT_LIST_DIR}/../pico_sdk_import.cmake)
-
-pico_sdk_init()
-
-add_executable(sources main.c)
+add_executable(terrarium main.c)
 
 add_subdirectory(lcd_driver)
 add_subdirectory(tempsensor_driver)
 add_subdirectory(wireless_driver)
 
-target_link_libraries(sources
+target_link_libraries(terrarium
     PRIVATE
         lcd_driver
         tempsensor_driver
@@ -20,11 +16,11 @@ target_link_libraries(sources
 
 # Add executable. Default name is the project name, version 0.1
 
-pico_set_program_name(sources "terrarium")
-pico_set_program_version(sources "0.1")
+pico_set_program_name(terrarium "terrarium")
+pico_set_program_version(terrarium "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(sources 0)
-pico_enable_stdio_usb(sources 1)
+pico_enable_stdio_uart(terrarium 0)
+pico_enable_stdio_usb(terrarium 1)
 
-pico_add_extra_outputs(sources)
+pico_add_extra_outputs(terrarium)
