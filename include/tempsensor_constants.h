@@ -1,0 +1,3 @@
+#ifndef TEMPSENSOR_CONSTANTS_H
+#define TEMPSENSOR_CONSTANTS_H
+#endif
