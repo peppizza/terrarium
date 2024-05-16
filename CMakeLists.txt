@@ -12,22 +12,22 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # == DO NEVER EDIT THE NEXT LINES for Raspberry Pi Pico VS Code Extension to work ==
 if(WIN32)
-   set(USERHOME $ENV{USERPROFILE})
+  set(USERHOME $ENV{USERPROFILE})
 else()
-    set(USERHOME $ENV{HOME})
+  set(USERHOME $ENV{HOME})
 endif()
 set(PICO_SDK_PATH ${USERHOME}/.pico-sdk/sdk/1.5.1)
 set(PICO_TOOLCHAIN_PATH ${USERHOME}/.pico-sdk/toolchain/13_2_Rel1)
 if(WIN32)
-    set(pico-sdk-tools_DIR ${USERHOME}/.pico-sdk/tools/1.5.1)
-    include(${pico-sdk-tools_DIR}/pico-sdk-tools-config.cmake)
-    include(${pico-sdk-tools_DIR}/pico-sdk-tools-config-version.cmake)
+  set(pico-sdk-tools_DIR ${USERHOME}/.pico-sdk/tools/1.5.1)
+  include(${pico-sdk-tools_DIR}/pico-sdk-tools-config.cmake)
+  include(${pico-sdk-tools_DIR}/pico-sdk-tools-config-version.cmake)
 endif()
 # ====================================================================================
 set(PICO_BOARD pico_w CACHE STRING "Board type")
 
-pico_sdk_init()
-
 project(terrarium_project C CXX ASM)
+
+pico_sdk_init()
 
 add_subdirectory(src)
