@@ -1,4 +1,5 @@
 #include "lcd_driver/lcd_driver.h"
+#include "tempsensor_driver/tempsensor_constants.h"
 #include "tempsensor_driver/tempsensor_driver.h"
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
