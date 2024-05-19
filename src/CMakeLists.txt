@@ -4,15 +4,9 @@ add_subdirectory(lcd_driver)
 add_subdirectory(tempsensor_driver)
 add_subdirectory(wireless_driver)
 
-target_link_libraries(terrarium
-    PRIVATE
-        lcd_driver
-        tempsensor_driver
-        wireless_driver
-        pico_stdlib
-        hardware_i2c
-        pico_cyw43_arch_lwip_threadsafe_background
-    )
+target_link_libraries(
+  terrarium PRIVATE lcd_driver tempsensor_driver wireless_driver pico_stdlib
+                    hardware_i2c pico_cyw43_arch_lwip_threadsafe_background)
 
 # Add executable. Default name is the project name, version 0.1
 
