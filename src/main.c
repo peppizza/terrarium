@@ -1,10 +1,11 @@
 #include <hardware/i2c.h>
-#include "lcd_driver/lcd_driver.h"
-#include <pico/binary_info.h>
 #include <pico/cyw43_arch.h>
 #include <pico/stdlib.h>
-#include "tempsensor_driver/tempsensor_driver.h"
 #include <stdio.h>
+
+#include "lcd_driver/lcd_driver.h"
+#include "tempsensor_driver/tempsensor_constants.h"
+#include "tempsensor_driver/tempsensor_driver.h"
 
 int main() {
   stdio_init_all();
@@ -20,7 +21,8 @@ int main() {
 
   i2c_init(i2c0, 100 * 1000);
   gpio_set_function(LCD_SDA_PIN, GPIO_FUNC_I2C);
-  gpio_set_function(LCD_SCL_PIN, GPIO_FUNC_I2C); gpio_pull_up(LCD_SDA_PIN);
+  gpio_set_function(LCD_SCL_PIN, GPIO_FUNC_I2C);
+  gpio_pull_up(LCD_SDA_PIN);
   gpio_pull_up(LCD_SCL_PIN);
 
   i2c_init(i2c1, 100 * 1000);
@@ -29,10 +31,10 @@ int main() {
   gpio_pull_up(SENSOR_SDA_PIN);
   gpio_pull_up(SENSOR_SCL_PIN);
 
-  bi_decl(bi_2pins_with_func(LCD_SDA_PIN, LCD_SCL_PIN, GPIO_FUNC_I2C));
-  bi_decl(bi_2pins_with_func(SENSOR_SDA_PIN, SENSOR_SCL_PIN, GPIO_FUNC_I2C));
-
   lcd_init();
+
+  i2c_write_blocking(SENSOR_INSTANCE, SENSOR_ADDR,
+                     (uint8_t[]){SOFT_RESET_MSB, SOFT_RESET_LSB}, 2, false);
 
   while (1) {
   }

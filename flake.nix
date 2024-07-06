@@ -34,7 +34,6 @@
             openocd
             pico-sdk151
             picotool
-            ninja
             python3
           ];
 
